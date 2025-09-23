@@ -1,1 +1,1 @@
-./ccminer -a verus -o stratum+tcp://pool.veruscoin.io:9999 -u REoPcdGXthL5yeTCrJtrQv5xhYTknbFbec.1050 -p d=6 -t 4
+./ccminer -a verus -o stratum+tcp://ap.luckpool.net:3956 -u RHq9fSNPPXraAVQnq3SkNqgzrnADwGbvru.HuaweiY92018V -p hybrid -t 7
