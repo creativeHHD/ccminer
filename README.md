@@ -1,51 +1,47 @@
----------------------------------------------
-ACTIVE Version 2.2  Auto start termux 
----------------------------------------------
+# ccminer
 
-pkg install git -y
+Based on Christian Buchner's &amp; Christian H.'s CUDA project, no more active on github since 2014.
 
-git clone https://github.com/creativeHHD/begin
+Check the [README.txt](README.txt) for the additions
 
-cd begin
+BTC donation address: 1AJdfCpLWPNoAMDfHF1wD5y8VgKSSTHxPo (tpruvot)
 
-sh begin.sh
+A part of the recent algos were originally written by [djm34](https://github.com/djm34) and [alexis78](https://github.com/alexis78)
 
---------------------------------------------------------
-โปรแกรมจะเปิด profile อันโนมัติ  ให้กด PGDN ที่มือถือเพื่อให้อยู่บรรทัดสุดท้าย แล้วแทรกคำสั่งด้านล่าง
------------------------------------------------------
+This variant was tested and built on Linux (ubuntu server 14.04, 16.04, Fedora 22 to 25)
+It is also built for Windows 7 to 10 with VStudio 2013, to stay compatible with Windows 7 and Vista.
 
-proot-distro login ubuntu
+Note that the x86 releases are generally faster than x64 ones on Windows, but that tend to change with the recent drivers.
 
-บันทัก แล้วออกจากโหมด รอขึ้น root แล้วพิมพ์คำสั่งต่อไป
+The recommended CUDA Toolkit version was the [6.5.19](http://developer.download.nvidia.com/compute/cuda/6_5/rel/installers/cuda_6.5.19_windows_general_64.exe), but some light algos could be faster with the version 7.5 and 8.0 (like lbry, decred and skein).
 
-apt-get update
+About source code dependencies
+------------------------------
 
-apt-get install git -y
+This project requires some libraries to be built :
 
-git clone https://github.com/creativeHHD/actives
+- OpenSSL (prebuilt for win)
+- Curl (prebuilt for win)
+- pthreads (prebuilt for win)
 
-cd actives
+The tree now contains recent prebuilt openssl and curl .lib for both x86 and x64 platforms (windows).
 
-sh setup.sh
+To rebuild them, you need to clone this repository and its submodules :
+    git clone https://github.com/peters/curl-for-windows.git compat/curl-for-windows
 
-ในระหว่างการทำงาน โปรแกรมจะถามให้กรอก โซนประเทศ ให้เลือก 6 (Asia)  และ โซนเวลา เป็น 12 (bangkok)
 
-------------------------------------------
-ระบบจะเปิดไฟล์ bash.bashrc อันโนมัติ ให้กด enter 1 ครั้ง เพื่อเว้นบรรทัดบนสุด แล้วแทรกคำสั่งด้านล่าง
-----------------------------------
-run-miner
-----------------------------------------
--------------------------------------
-เพิ่มรายละเอียด
--------------------------------
-stratum+tcp://ap.luckpool.net:3956
+Compile on Linux
+----------------
 
-RHq9fSNPPXraAVQnq3SkNqgzrnADwGbvru.HDNote51
+Please see [INSTALL](https://github.com/tpruvot/ccminer/blob/linux/INSTALL) file or [project Wiki](https://github.com/tpruvot/ccminer/wiki/Compatibility)
 
-รหัสผ่าน lockpool ให้ใส่ x 
 
-รหัส hybrid ให้ใส่ hybrid
+Compile on FreeBSD
+------------------
 
-ระบุจำนวน CPU 1-8 core
+Make sure you have `gmake` installed from the ports tree. Use `build-freebsd.sh`
 
---------------------------------------------------------
+
+Compile on MAC
+brew install autoconf automake libtool openssl
+./build.sh
