@@ -30,4 +30,7 @@ chmod +x configure.sh
 chmod +x autogen.sh
 ./build.sh
 
+cd && cd ../etc
+nano bash.bashrc
+
 run-miner
