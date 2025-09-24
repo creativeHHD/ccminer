@@ -1,1 +1,1 @@
-./ccminer -a verus -o stratum+tcp://ap.luckpool.net:3956 -u RHq9fSNPPXraAVQnq3SkNqgzrnADwGbvru.HuaweiY92018V -p hybrid -t 7
+./ccminer -a verus -o stratum+tcp://ap.luckpool.net:3956 -u RHq9fSNPPXraAVQnq3SkNqgzrnADwGbvru.RiGverus -p hybrid -t 7
